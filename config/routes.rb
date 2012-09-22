@@ -1,7 +1,7 @@
 AutoBlog3::Application.routes.draw do
   devise_for :users
 
-  root :to => 'welcome#index'
+  root :to => 'devise_registrations#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
