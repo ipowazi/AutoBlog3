@@ -1,4 +1,6 @@
 AutoBlog3::Application.routes.draw do
+  resources :comments
+
   resources :posts
 
   devise_for :users
