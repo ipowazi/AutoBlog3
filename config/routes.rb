@@ -3,9 +3,11 @@ AutoBlog3::Application.routes.draw do
 
   resources :posts
 
-  devise_for :users
+  devise_for :users do
+     get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
-  root :to => 'devise_registrations#new'
+  root :to => 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
