@@ -1,0 +1,6 @@
+<ol>
+<% @posts.each do |post| %>
+	<li><%= post.title %></li>	
+	<p>Posted by <%= post.user[:email] %> <%= time_ago_in_words(post.updated_at) %> ago | XX comments</p>
+<% end %>
+</ol>

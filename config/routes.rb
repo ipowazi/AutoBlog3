@@ -1,4 +1,6 @@
 AutoBlog3::Application.routes.draw do
+  resources :posts
+
   devise_for :users
 
   root :to => 'devise_registrations#new'
