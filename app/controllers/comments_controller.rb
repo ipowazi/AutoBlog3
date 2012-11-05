@@ -1,13 +1,19 @@
 class CommentsController < ApplicationController
   def new
-  	@comment = Comment.new
+    @post = Post.find(params[:post_id])
+  	@comment = @post.comments.new
   	# @post = @comment.post
   end
 
   def create
-  	@comment = Comment.new(params[:comment])
-  	@comment.save
-  	redirect_to @comment, :notice => "Comment created!"
+    @post = Post.find(params[:post_id])
+  	@comment = @post.comments.new(params[:comment])
+  	if @comment.save
+  	  redirect_to @comment, :notice => "Comment created!"
+    else
+      flash[:error] = "Something went wrong"
+      render :new
+    end
   end
 
   def show
@@ -15,7 +21,11 @@ class CommentsController < ApplicationController
   end
 
   def index
-  	@comments = Comment.all
+    if params[:post_id]
+      @comments = Post.find(params[:post_id]).comments
+    else
+    	@comments = Comment.all
+    end
   end
 
   def edit
@@ -28,7 +38,7 @@ class CommentsController < ApplicationController
   	redirect_to @comment, :notice => "Comment updated"
   end
 
-  def delete
+  def destroy
   	@comment = Comment.find(params[:id])
   	@comment.destroy
   	redirect_to comments_path, :notice => "Comment deleted"

@@ -1,7 +1,8 @@
 AutoBlog3::Application.routes.draw do
-  resources :comments
-
-  resources :posts
+  resources :comments, :only => [:index]
+  resources :posts do
+    resources :comments
+  end
 
   devise_for :users do
      get '/users/sign_out' => 'devise/sessions#destroy'

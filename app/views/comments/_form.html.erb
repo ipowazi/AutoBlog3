@@ -2,9 +2,6 @@
 	<%= f.label :body %> <br />
 	<%= f.text_field :body %> <br /> <br />
 
-	<%= f.label :post_id %> <br />
-	<%= f.text_field :post_id %> <br /> <br />
-
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 
 	<% if @comment %>
