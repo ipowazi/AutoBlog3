@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-  	@comments = Comment.all
+  	@comments = Comment.find(:all, :order => "created_at DESC")
   end
 
 end

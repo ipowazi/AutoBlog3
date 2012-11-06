@@ -1,15 +1,15 @@
 <%= form_for @post do |f| %>
-	<%= f.label :title %> <br />
-	<%= f.text_field :title %> <br /> <br />
+	<p class="para">Post title</p> 
+	<p><%= f.text_field :title, size: 60 %></p>
 
-	<%= f.label :url %> <br />
-	<%= f.text_field :url %> <br /> <br />
+	<p class="para">url</p>
+	<p><%= f.text_field :url, size: 60 %></p>
 
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 
-	<% if @post %>
-		<%= f.submit "Update Post" %>	
-	<% else %>
-		<%= f.submit "Submit" %>
-	<% end %>
+	<div class="button"><% if @post.id %>
+			<%= f.submit "Update Post" %>	
+		<% else %>
+			<%= f.submit "Submit" %>
+		<% end %></div>
 <% end %>

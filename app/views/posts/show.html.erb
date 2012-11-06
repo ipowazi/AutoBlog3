@@ -1,24 +1,20 @@
-<p>Posted by: <%= @post.user.name %></p>
-<p>Post title: <%= link_to @post.title, @post.url %></p>
+<p class="para"><%= link_to @post.title, @post.url %></p>
+<p class="subtext">Posted by <%= @post.user[:name] %> <%= time_ago_in_words(@post.updated_at) %> ago | <%=link_to "#{@post.comments.count} #{comments(@post)}", @post %></p>
 
-
-<h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="field">
+  <div>
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+  <div class="comment_field">
+    <%= f.text_area :body, :cols => "50", :rows => "7" %>
   </div>
-  <div class="actions">
+  <div class="button">
     <%= f.submit %>
   </div>
 <% end %>
 
 
-<br />
-<h2>Comments</h2>
+
 <% @comments.each do |comment| %>
   
   <%#= debug comment %>

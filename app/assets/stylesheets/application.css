@@ -1,7 +1,7 @@
 /*************
 CSS Resets
 *************/
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 	margin: 0;
 	padding: 0;
 	font-size: 10pt;
@@ -13,6 +13,9 @@ a {
 	text-decoration: none;
 	color: black;
 }
+
+
+
 
 
 /*************
@@ -56,10 +59,19 @@ LAYOUT
 *************/
 
 .wrapper {
-	width: 750px;
+	width: 900px;
 	margin: 0 auto;
 	background-color: #f6f6ef;
 }
+
+.main {
+	margin-left: 10px;
+}
+
+.main a:visited
+{
+	color: rgb(130, 130, 130);
+} 
 
 /*************
 POSTS#Index
@@ -71,19 +83,20 @@ ol {
 
 ol li {
 	margin-top: 10px;
-	line-height: 150%;
+	line-height: 130%;
 
 }
 
 .toptext {
 	font-size: 7pt;
 	color: rgb(130, 130, 130);
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
 .subtext {
 	font-size: 7pt;
 	color: rgb(130, 130, 130);
+	margin-top: 3px;
 }
 
 .subbody {
@@ -93,6 +106,15 @@ ol li {
 /*************
 POSTS#Show
 *************/
+h2 {
+	margin-top: 1em;
+}
+
+.para {
+	margin-top: 1em;
+	margin-bottom: 3px;
+}
+
 .post p {
 	margin-top: 20px;
 }
@@ -104,4 +126,18 @@ ul {
 
 .post_comments {
 	line-height: 200%;
+}
+
+.button {
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/*************
+DEVISE
+ *************/
+.devise {
+	margin-top: 8px;
+	margin-bottom: 2px;
 }
