@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   	@comment = @post.comments.new(params[:comment])
   	if @comment.save
-  	  redirect_to @comment, :notice => "Comment created!"
+  	  redirect_to root_path, :notice => "Comment created!"
     else
       flash[:error] = "Something went wrong"
       render :new
