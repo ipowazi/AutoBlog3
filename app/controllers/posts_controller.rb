@@ -6,7 +6,13 @@ class PostsController < ApplicationController
   def create
   	@post = Post.new(params[:post])
   	@post.save
-  	redirect_to @post, :notice => "Post created!"
+    if @post.save
+      redirect_to @post, :notice => "Post created!"
+    else
+      flash[:error] = "Something went wrong"
+      render :new
+    end
+  	# redirect_to @post, :notice => "Post created!"
   end
 
   def show

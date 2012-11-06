@@ -3,7 +3,7 @@
 	<p class="links"><%= link_to "new", new_post_path %>  |  <%= link_to "comments", comments_path %></p>
 	<p class="login">
 		<% if current_user %>
-			<%= current_user.email %>
+			<%= current_user.name %>
 		<% else %>
 			<%= link_to "sign up", new_user_registration_path %>  |  <%= link_to "sign in", new_user_session_path %>
 		<% end %>

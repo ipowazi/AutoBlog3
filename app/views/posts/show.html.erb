@@ -1,3 +1,4 @@
 <p>Posted by: <%= current_user.email %></p>
-<p>Post title: <%= @post.title %></p>
-<p>Post body: <%= @post.body %></p>
+<p>Post title: <%= link_to @post.title, @post.url %></p>
+
+<%= render :partial => 'comments/form', :locals => { :comment => @post.comments.new } %>
