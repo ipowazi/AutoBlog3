@@ -5,4 +5,8 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def index
+  	@comments = Comment.all
+  end
+
 end

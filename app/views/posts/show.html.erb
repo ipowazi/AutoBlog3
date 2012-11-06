@@ -1,4 +1,4 @@
-<p>Posted by: <%= current_user.email %></p>
+<p>Posted by: <%= @post.user.name %></p>
 <p>Post title: <%= link_to @post.title, @post.url %></p>
 
 
@@ -23,12 +23,11 @@
   
   <%#= debug comment %>
   <% if comment.id %>
-  <br />
-  <p class="subtext">
+  <p class="toptext">
   	<%= comment.user.name %> <%= time_ago_in_words(comment.updated_at) %> ago
   </p>
  
-  <p>
+  <p class="subbody">
     <%= comment.body %>
   <% end %>
   </p>

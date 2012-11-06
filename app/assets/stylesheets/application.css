@@ -24,7 +24,7 @@ HEADER
 }
 
 .title {
-	width: 95px;
+	width: 115px;
 	display: inline-block;
 	/*border: red 2px solid;*/
 	font-size: 12pt;
@@ -75,9 +75,19 @@ ol li {
 
 }
 
+.toptext {
+	font-size: 7pt;
+	color: rgb(130, 130, 130);
+	margin-top: 15px;
+}
+
 .subtext {
 	font-size: 7pt;
 	color: rgb(130, 130, 130);
+}
+
+.subbody {
+	margin-top: 5px;
 }
 
 /*************
